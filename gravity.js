@@ -1,5 +1,5 @@
 var particle_no = 1000;
-var attractor_no = 10;
+var attractor_no = 30;
 
 var particles = [];
 var attractors = [];
@@ -69,9 +69,11 @@ function updatePositions() {
             var dx = a.x - p.x;
             var dy = a.y - p.y;
 
-            var d = Math.sqrt(dx*dx + dy*dy);
+            var d = dx*dx + dy*dy;
 
-            if(d > 500) {
+            if(d < 640000) {
+                d = sqrt_estimation(d);
+
                 var x_norm = dx / d;
                 var y_norm = dy / d;
 
@@ -92,33 +94,15 @@ function updatePositions() {
 }
 
 
+function sqrt_estimation(n) {
+    var x1 = 400;
+    var x2 = (x1 + (n / x1)) / 2;
+    var i;
 
+    for(i = 0; i < 6; i++) {
+        x1 = x2;
+        x2 = (x1 + (n / x1)) / 2;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    return x2;
+}
