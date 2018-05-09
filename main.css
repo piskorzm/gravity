@@ -1,7 +1,17 @@
 body {
-    display: flex;
     margin: 0;
     background-color: #242424;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
+}
+
+h1 {
+    color: #ececec;
+    font-family: 'Lucida Console';
+    margin: 10px;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+    border: solid #ececec 2px;
 }

@@ -1,5 +1,0 @@
-const SCREEN_WIDTH = 1800;
-const SCREEN_HEIGHT = 900;
-
-const PARTICLE_RADIUS = 5;
-const ATTRACTOR_RADIUS = 10;
