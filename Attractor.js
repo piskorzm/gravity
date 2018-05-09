@@ -5,10 +5,10 @@ class Attractor {
         this.g = Math.floor(Math.random() * 100) *0.01;
 
         if(this.g > 0.5) {
-            this.g *= 2;
+            this.g *= 4;
         }
         else {
-            this.g *= -2;
+            this.g *= -3;
         }
     }
 }
