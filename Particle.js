@@ -1,18 +1,16 @@
-const p_radius = 4;
-
 class Particle {
     constructor() {
         this.x = Math.floor(Math.random() * SCREEN_WIDTH);
         this.y = Math.floor(Math.random() * SCREEN_HEIGHT);
         this.vx = 0;
         this.vy = 0;
+        this.r = 4;
+        this.c = color('#eeeeee');
     }
 
     draw() {
-        let c = color('#eeeeee');
-        fill(c);
-        noStroke();
-        ellipse(this.x, this.y, p_radius, p_radius);
+        fill(this.c);
+        ellipse(this.x, this.y, this.r, this.r);
     }
 
     update(attractors) {
@@ -21,18 +19,18 @@ class Particle {
 
         if(this.x > SCREEN_WIDTH) {
             this.x = SCREEN_WIDTH;
-            this.vx = 0;
+            this.vx *= -0.6;
         } else if (this.x < 0) {
             this.x = 0;
-            this.vx = 0;
+            this.vx *= -0.6;
         }
 
         if(this.y > SCREEN_HEIGHT) {
             this.y = SCREEN_HEIGHT;
-            this.vy = 0;
+            this.vy *= -0.6;
         } else if (this.y < 0) {
             this.y = 0;
-            this.vy = 0;
+            this.vy *= -0.6;
         }
 
         attractors.forEach((a) => {
