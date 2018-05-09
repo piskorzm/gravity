@@ -1,7 +1,7 @@
 const SCREEN_WIDTH = 1280;
 const SCREEN_HEIGHT = 720;
 
-let particle_no = 750;
+let particle_no = 800;
 let attractor_no = 20;
 
 let particles = [];

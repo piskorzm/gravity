@@ -2,13 +2,13 @@ class Attractor {
     constructor() {
         this.x = Math.floor(Math.random() * SCREEN_WIDTH);
         this.y = Math.floor(Math.random() * SCREEN_HEIGHT);
-        this.g = Math.floor((Math.random() * 10) + 3) *0.1;
+        this.g = Math.floor((Math.random() * 8) + 2) *0.1;
 
         if(this.g > 0.6) {
             this.g *= 4;
         }
         else {
-            this.g *= -6;
+            this.g *= -8;
         }
 
         this.r = Math.floor(Math.abs(this.g)* 4);
