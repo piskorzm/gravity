@@ -13,7 +13,6 @@ class Attractor {
 
         this.r = Math.floor(Math.abs(this.g)* 4);
         this.c = (this.g > 0 ? color('#ff3333') : color('#3333ff'));
-        console.log(this.r);
     }
 
     draw() {

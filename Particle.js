@@ -13,7 +13,7 @@ class Particle {
         ellipse(this.x, this.y, this.r, this.r);
     }
 
-    update(attractors) {
+    update(attractors, walls) {
         this.x += this.vx;
         this.y += this.vy;
 
@@ -32,6 +32,12 @@ class Particle {
             this.y = 0;
             this.vy *= -0.6;
         }
+
+        walls.forEach((w) => {
+            if(w.isInside(this)) {
+                w.setParticleToClosestEdge(this);
+            }
+        });
 
         attractors.forEach((a) => {
             let dx = a.x - this.x;
